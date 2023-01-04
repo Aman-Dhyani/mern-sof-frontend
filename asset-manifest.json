@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/MERN-SOF-frontend/static/css/main.bad39b08.css",
+    "main.js": "/MERN-SOF-frontend/static/js/main.e3cc6ba0.js",
+    "static/media/asistente-robot.gif": "/MERN-SOF-frontend/static/media/asistente-robot.6038b429d9db126e10d2.gif",
+    "static/media/chatbot.gif": "/MERN-SOF-frontend/static/media/chatbot.351b03110252338f965f.gif",
+    "static/media/search-icon.svg": "/MERN-SOF-frontend/static/media/search-icon.fd303735db6ec185077f265eee98b0f5.svg",
+    "index.html": "/MERN-SOF-frontend/index.html",
+    "main.bad39b08.css.map": "/MERN-SOF-frontend/static/css/main.bad39b08.css.map",
+    "main.e3cc6ba0.js.map": "/MERN-SOF-frontend/static/js/main.e3cc6ba0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bad39b08.css",
+    "static/js/main.e3cc6ba0.js"
+  ]
+}
