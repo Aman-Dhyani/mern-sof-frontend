@@ -1,6 +1,6 @@
 {
-  "homepage": "http://Aman-Dhyani.github.io/MERN-SOF-frontend",
-  "name": "frontend",
+  "homepage": "http://Aman-Dhyani.github.io/mern-sof-frontend",
+  "name": "mern-sof-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
