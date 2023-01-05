@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/mern-sof-frontend/static/css/main.bad39b08.css",
-    "main.js": "/mern-sof-frontend/static/js/main.31c28b7e.js",
+    "main.css": "/mern-sof-frontend/static/css/main.b7bb285a.css",
+    "main.js": "/mern-sof-frontend/static/js/main.c94ceb4e.js",
     "static/media/asistente-robot.gif": "/mern-sof-frontend/static/media/asistente-robot.6038b429d9db126e10d2.gif",
     "static/media/chatbot.gif": "/mern-sof-frontend/static/media/chatbot.351b03110252338f965f.gif",
     "static/media/search-icon.svg": "/mern-sof-frontend/static/media/search-icon.fd303735db6ec185077f265eee98b0f5.svg",
     "index.html": "/mern-sof-frontend/index.html",
-    "main.bad39b08.css.map": "/mern-sof-frontend/static/css/main.bad39b08.css.map",
-    "main.31c28b7e.js.map": "/mern-sof-frontend/static/js/main.31c28b7e.js.map"
+    "main.b7bb285a.css.map": "/mern-sof-frontend/static/css/main.b7bb285a.css.map",
+    "main.c94ceb4e.js.map": "/mern-sof-frontend/static/js/main.c94ceb4e.js.map"
   },
   "entrypoints": [
-    "static/css/main.bad39b08.css",
-    "static/js/main.31c28b7e.js"
+    "static/css/main.b7bb285a.css",
+    "static/js/main.c94ceb4e.js"
   ]
 }
