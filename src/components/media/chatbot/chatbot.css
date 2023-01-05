@@ -96,6 +96,19 @@ html {
     background-image: url("https://cdn-icons-png.flaticon.com/512/52/52116.png");
 }
 
+.chat-res {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+}
+
+.chat-img {
+    height: 70px;
+    width: 70px;
+}
+
 @media screen and (max-width:734px) {
     .my-icon {
         height: 30px;
@@ -137,6 +150,15 @@ html {
     .chat-ask-ques-submit {
         padding: 1.4%;
     }
+
+    .chat-img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .chat-res p {
+        font-size: 13px;
+    }
 }
 
 @media screen and (max-width:439px) {
@@ -145,5 +167,13 @@ html {
     .my-chats-time {
         color: white;
         font-size: 10px;
+    }
+    .chat-img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .chat-res p {
+        font-size: 11px;
     }
 }

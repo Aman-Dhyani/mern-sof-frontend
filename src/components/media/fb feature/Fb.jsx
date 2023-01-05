@@ -14,6 +14,7 @@ import PostBtn from './fb post button/PostBtn'
 import copy from 'copy-to-clipboard'
 import LetChat from './lets chat/LetChat'
 import HomeLeft from '../../pages/home/HomeLeft'
+import lockImg from '../../../assets/icons8-unlock-private-50.png'
 import './fb.css'
 
 const Fb = () => {
@@ -87,12 +88,22 @@ const Fb = () => {
             <div className='fb-cont-main'>
                 <HomeLeft />
                 <div className='fb-cont'>
-                    <PostBtn  dispatch={dispatch} navigate={navigate} user={user} />
-                    <FbPostsScroller handleDelete={handleDelete} handlePostVote={handlePostVote} location={location} handleShare={handleShare} allFbPosts={allFbPosts} navigate={navigate} avtStyles={avtStyles} Avatar={Avatar} user={user} />
-                    <FbSliderMenu setChatContLeft={setChatContLeft} setFriendUser={setFriendUser} refreshImg={refreshImg} Avatar={Avatar} MakeReqBtn={MakeReqBtn} RemoveRequest={RemoveRequest}
-                        AcceptRequest={AcceptRequest} fetchAllFbUsers={fetchAllFbUsers}
-                        allUsers={allUsers} user={user} allUpdatedBtns={allUpdatedBtns} navigate={navigate}
-                        dispatch={dispatch} avtStyles={avtStyles} fbReqBtn={fbReqBtn} manageReqBtn={manageReqBtn} /><LetChat setChatContLeft={setChatContLeft} navigate={navigate} Avatar={Avatar} avtStyles={avtStyles} friendUser={friendUser} user={user} dispatch={dispatch} chatContLeft={chatContLeft} />
+                    {
+                        user ?
+                            <>
+                                <PostBtn dispatch={dispatch} navigate={navigate} user={user} />
+                                <FbPostsScroller handleDelete={handleDelete} handlePostVote={handlePostVote} location={location} handleShare={handleShare} allFbPosts={allFbPosts} navigate={navigate} avtStyles={avtStyles} Avatar={Avatar} user={user} />
+                                <FbSliderMenu setChatContLeft={setChatContLeft} setFriendUser={setFriendUser} refreshImg={refreshImg} Avatar={Avatar} MakeReqBtn={MakeReqBtn} RemoveRequest={RemoveRequest}
+                                    AcceptRequest={AcceptRequest} fetchAllFbUsers={fetchAllFbUsers}
+                                    allUsers={allUsers} user={user} allUpdatedBtns={allUpdatedBtns} navigate={navigate}
+                                    dispatch={dispatch} avtStyles={avtStyles} fbReqBtn={fbReqBtn} manageReqBtn={manageReqBtn} />
+                                <LetChat setChatContLeft={setChatContLeft} navigate={navigate} Avatar={Avatar} avtStyles={avtStyles} friendUser={friendUser} user={user} dispatch={dispatch} chatContLeft={chatContLeft} />
+                            </>
+                            : <div className='fb-res'>
+                                <img className='fb-res-image' src={lockImg} alt='err' />
+                                <p>LOGIN OR SIGNUP TO ACCESS FB COMMUNITY</p>
+                            </div>
+                    }
                 </div>
             </div>
         </>

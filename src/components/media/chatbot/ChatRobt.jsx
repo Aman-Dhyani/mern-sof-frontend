@@ -53,8 +53,8 @@ const ChatRobt = () => {
                                     )
                                     : null
                             )
-                            : <div style={{ height: '100vh', display: "flex", justifyContent: "center", alignItems: 'center', gap: "3%" }}>
-                                <img height="60px" width="60px" src={lockImg} alt='err' />
+                            : <div className='chat-res'>
+                                <img className='chat-img' src={lockImg} alt='err' />
                                 <p>LOGIN OR SIGNUP TO ACCESS CHATBOT</p>
                             </div>
                     }
