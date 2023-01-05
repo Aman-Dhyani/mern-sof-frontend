@@ -6,6 +6,7 @@ import Chatbox from './Chatbox';
 import HomeLeft from '../../pages/home/HomeLeft';
 import lockImg from '../../../assets/icons8-unlock-private-50.png'
 import './chatbot.css'
+import { useNavigate } from 'react-router-dom';
 
 const ChatRobt = () => {
 
@@ -13,6 +14,7 @@ const ChatRobt = () => {
     const dispatch = useDispatch()
     const user = useSelector((state) => (state?.currentUserReducer))
     const realTimeChats = useSelector((state) => (state?.facebookReducer?.data))
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -60,7 +62,7 @@ const ChatRobt = () => {
                     }
                 </div>
                 <form className='chat-bot-lower-div' onSubmit={handleSubmit}>
-                    <input placeholder='Ask Any Question....' className='chat-ask-ques' type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
+                    <input placeholder='Ask Any Question....' className='chat-ask-ques' type="text" value={query} onChange={(e) =>user? setQuery(e.target.value):alert("Login First To Use ChatBot")||navigate("/login")} />
                     <input className='chat-ask-ques-submit' type="submit" value="send" />
                 </form>
             </div>
