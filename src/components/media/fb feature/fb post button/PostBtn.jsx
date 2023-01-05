@@ -4,7 +4,7 @@ import refreshImg from '../../../../assets/refresh.png'
 import { fetchFbPosts } from '../../../../Actions and Reducers/Actions/fbpostsAction'
 import { useState } from 'react'
 
-const PostBtn = ({ dispatch, navigate }) => {
+const PostBtn = ({ user, dispatch, navigate }) => {
 
     const [rgtCntBot, setrgtCntBot] = useState("-26%")
     const [btnVal, setbtnVal] = useState("🔼")
@@ -15,7 +15,7 @@ const PostBtn = ({ dispatch, navigate }) => {
                 <p onClick={() => rgtCntBot === "-26%" ? (setrgtCntBot("0%") || setbtnVal("🔽")) : (setrgtCntBot("-26%") || setbtnVal("🔼"))}>{btnVal}</p>
                 <br />     <br />
                 <div>
-                    <div onClick={() => navigate('/fbpostform')} className="post-in-btn">
+                    <div onClick={() => user ? navigate('/fbpostform') : alert("signup first") || navigate('/signup')} className="post-in-btn">
                         <p>+</p>
                     </div>
                 </div>

@@ -87,7 +87,7 @@ const Fb = () => {
             <div className='fb-cont-main'>
                 <HomeLeft />
                 <div className='fb-cont'>
-                    <PostBtn  dispatch={dispatch} navigate={navigate} />
+                    <PostBtn  dispatch={dispatch} navigate={navigate} user={user} />
                     <FbPostsScroller handleDelete={handleDelete} handlePostVote={handlePostVote} location={location} handleShare={handleShare} allFbPosts={allFbPosts} navigate={navigate} avtStyles={avtStyles} Avatar={Avatar} user={user} />
                     <FbSliderMenu setChatContLeft={setChatContLeft} setFriendUser={setFriendUser} refreshImg={refreshImg} Avatar={Avatar} MakeReqBtn={MakeReqBtn} RemoveRequest={RemoveRequest}
                         AcceptRequest={AcceptRequest} fetchAllFbUsers={fetchAllFbUsers}
