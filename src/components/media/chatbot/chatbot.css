@@ -11,6 +11,8 @@ html {
     width: 93%;
     background-color: rgb(49, 49, 49);
     overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .chat-bot-chats-screen {

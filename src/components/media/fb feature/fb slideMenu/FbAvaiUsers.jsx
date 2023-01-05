@@ -14,7 +14,7 @@ const FbAvaiUsers = ({ setChatContLeft, setFriendUser, allUsers, user, fbReqBtn,
                     allUsers === null ? <h3>No Users Available...</h3> :
                         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: '3%' }}>
                             <h4>Other Available Users ({allUsers?.data?.length - 1})</h4>
-                            <input className='search-friends' value={searchedUser} onChange={(e) => setSearchedUser(e.target.value)} type="text" placeholder='search users...' />
+                            <input className='search-friends' value={searchedUser} onChange={(e) =>user? setSearchedUser(e.target.value):alert("login first")||navigate("/login")} type="text" placeholder='search users...' />
                         </div>
                 }
                 <div className='scrll'>

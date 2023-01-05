@@ -1,25 +1,18 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useLocation, useNavigate } from 'react-router-dom'
 import { saveChatsAct } from '../../../Actions and Reducers/Actions/facebookAction';
 import axios from "axios";
 import Chatbox from './Chatbox';
-import './chatbot.css'
 import HomeLeft from '../../pages/home/HomeLeft';
-import { useEffect } from 'react';
+import lockImg from '../../../assets/icons8-unlock-private-50.png'
+import './chatbot.css'
 
 const ChatRobt = () => {
 
     const [query, setQuery] = useState("")
     const dispatch = useDispatch()
-    const navigate = useNavigate()
     const user = useSelector((state) => (state?.currentUserReducer))
     const realTimeChats = useSelector((state) => (state?.facebookReducer?.data))
-    const location = useLocation()
-
-    useEffect(() => {
-        location.pathname === "/chatbot" && (alert("signup or login first to chat ") || navigate('/login'))
-    })
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -49,16 +42,21 @@ const ChatRobt = () => {
             <div className='chatbot-cont'>
                 <div className='chat-bot-chats-screen'>
                     {
-                        realTimeChats?.map(
-                            users => users?._id?.includes(user?.result?._id) ?
-                                users?.chatBox?.map(cht =>
+                        user ?
+                            realTimeChats?.map(users =>
+                                users?._id?.includes(user?.result?._id) ?
+                                    users?.chatBox?.map(cht =>
 
-                                    cht?.sepId?.includes(user?.result?._id) ?
-                                        <Chatbox key={cht?._id} msgTime={cht?.messageOn} message={cht?.message} icon={cht} user={user} /> :
-                                        <Chatbox key={cht?._id} msgTime={cht?.messageOn} message={cht?.message} icon={cht} />
-                                )
-                                : null
-                        )
+                                        cht?.sepId?.includes(user?.result?._id) ?
+                                            <Chatbox key={cht?._id} msgTime={cht?.messageOn} message={cht?.message} icon={cht} user={user} /> :
+                                            <Chatbox key={cht?._id} msgTime={cht?.messageOn} message={cht?.message} icon={cht} />
+                                    )
+                                    : null
+                            )
+                            : <div style={{ height: '100vh', display: "flex", justifyContent: "center", alignItems: 'center', gap: "3%" }}>
+                                <img height="60px" width="60px" src={lockImg} alt='err' />
+                                <p>LOGIN OR SIGNUP TO ACCESS CHATBOT</p>
+                            </div>
                     }
                 </div>
                 <form className='chat-bot-lower-div' onSubmit={handleSubmit}>
