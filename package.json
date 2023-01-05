@@ -1,6 +1,5 @@
 {
-  "homepage": "http://Aman-Dhyani.github.io/mern-sof-frontend",
-  "name": "mern-sof-frontend",
+  "name": "frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,7 +17,6 @@
     "mdb-react-ui-kit": "^5.1.0",
     "moment": "^2.29.4",
     "react": "^18.2.0",
-    "react-chatbot-kit": "^2.1.2",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.6.1",
@@ -29,8 +27,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
