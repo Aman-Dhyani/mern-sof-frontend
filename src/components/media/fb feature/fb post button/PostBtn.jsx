@@ -4,7 +4,7 @@ import refreshImg from '../../../../assets/refresh.png'
 import { fetchFbPosts } from '../../../../Actions and Reducers/Actions/fbpostsAction'
 import { useState } from 'react'
 
-const PostBtn = ({ Avatar, avtStyles, user, dispatch, navigate }) => {
+const PostBtn = ({ dispatch, navigate }) => {
 
     const [rgtCntBot, setrgtCntBot] = useState("-26%")
     const [btnVal, setbtnVal] = useState("🔼")

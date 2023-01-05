@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { saveChatsAct } from '../../../Actions and Reducers/Actions/facebookAction';
 import axios from "axios";
 import Chatbox from './Chatbox';
 import './chatbot.css'
 import HomeLeft from '../../pages/home/HomeLeft';
+import { useEffect } from 'react';
 
 const ChatRobt = () => {
 
@@ -14,11 +15,15 @@ const ChatRobt = () => {
     const navigate = useNavigate()
     const user = useSelector((state) => (state?.currentUserReducer))
     const realTimeChats = useSelector((state) => (state?.facebookReducer?.data))
+    const location = useLocation()
+
+    useEffect(() => {
+        location.pathname === "/chatbot" && (alert("signup or login first to chat ") || navigate('/login'))
+    })
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        user === null ? (alert("signup or login first to chat ") || navigate('/login')) :
-            dispatch(saveChatsAct({ _id: user?.result?._id, message: query, sepId: user?.result?._id }))
+        dispatch(saveChatsAct({ _id: user?.result?._id, message: query, sepId: user?.result?._id }))
 
         const fetchAnsFromApi = {
             method: 'GET',
