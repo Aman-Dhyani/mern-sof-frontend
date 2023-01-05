@@ -6,7 +6,6 @@ import { useDispatch } from 'react-redux'
 import { fetchAllQues } from './Actions and Reducers/Actions/quesAction'
 import { fetchAllUsers } from './Actions and Reducers/Actions/usersAction'
 import { fetchAllFbUsers } from './Actions and Reducers/Actions/facebookAction'
-import { fetchUpdatedFbInterface } from './Actions and Reducers/Actions/fbBtnAction'
 import { fetchFbPosts } from './Actions and Reducers/Actions/fbpostsAction'
 
 const App = () => {
@@ -16,7 +15,6 @@ const App = () => {
     dispatch(fetchAllQues())
     dispatch(fetchAllUsers())
     dispatch(fetchAllFbUsers())
-    dispatch(fetchUpdatedFbInterface())
     dispatch(fetchFbPosts())
   }, [dispatch])
 

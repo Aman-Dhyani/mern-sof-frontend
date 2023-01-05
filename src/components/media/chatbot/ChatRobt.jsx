@@ -5,6 +5,7 @@ import { saveChatsAct } from '../../../Actions and Reducers/Actions/facebookActi
 import axios from "axios";
 import Chatbox from './Chatbox';
 import './chatbot.css'
+import HomeLeft from '../../pages/home/HomeLeft';
 
 const ChatRobt = () => {
 
@@ -38,25 +39,28 @@ const ChatRobt = () => {
     }
 
     return (
-        <div className='chatbot-cont'>
-            <div className='chat-bot-chats-screen'>
-                {
-                    realTimeChats?.map(
-                        users => users?._id?.includes(user?.result?._id) ?
-                            users?.chatBox?.map(cht =>
+        <div className='chatbot-cont-main'>
+            <HomeLeft />
+            <div className='chatbot-cont'>
+                <div className='chat-bot-chats-screen'>
+                    {
+                        realTimeChats?.map(
+                            users => users?._id?.includes(user?.result?._id) ?
+                                users?.chatBox?.map(cht =>
 
-                                cht?.sepId?.includes(user?.result?._id) ?
-                                    <Chatbox key={cht?._id} msgTime={cht?.messageOn} message={cht?.message} icon={cht} user={user} /> :
-                                    <Chatbox key={cht?._id} msgTime={cht?.messageOn} message={cht?.message} icon={cht} />
-                            )
-                            : null
-                    )
-                }
+                                    cht?.sepId?.includes(user?.result?._id) ?
+                                        <Chatbox key={cht?._id} msgTime={cht?.messageOn} message={cht?.message} icon={cht} user={user} /> :
+                                        <Chatbox key={cht?._id} msgTime={cht?.messageOn} message={cht?.message} icon={cht} />
+                                )
+                                : null
+                        )
+                    }
+                </div>
+                <form className='chat-bot-lower-div' onSubmit={handleSubmit}>
+                    <input placeholder='Ask Any Question....' className='chat-ask-ques' type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
+                    <input className='chat-ask-ques-submit' type="submit" value="send" />
+                </form>
             </div>
-            <form className='chat-bot-lower-div' onSubmit={handleSubmit}>
-                <input placeholder='Ask Any Question....' className='chat-ask-ques' type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
-                <input className='chat-ask-ques-submit' type="submit" value="send" />
-            </form>
         </div>
     )
 }

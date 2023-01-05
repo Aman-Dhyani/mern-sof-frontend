@@ -9,24 +9,26 @@ const FbRequests = ({ allUsers, user, dispatch, navigate, avtStyles, Avatar, fet
                     <p className='refresh-note'>refresh updated data</p>
                     <img className='refresh-frnd-req' onClick={() => dispatch(fetchAllFbUsers())} src={refreshImg} alt="err" />
                 </div>
-                {
-                    allUsers?.data?.map(currUser => {
-                        return currUser?._id?.includes(user?.result?._id) ?
-                            currUser?.frequest?.map(freqs =>
-                                freqs ?
-                                    <div key={freqs.userId} className='fb-users-list'>
-                                        <div className='fb-avt-div' onClick={() => navigate(`/user/${freqs?.userId}`)} style={{ textDecoration: 'none' }}>
-                                            <Avatar icon={freqs?.userName[0]?.toUpperCase()} avtStyles={avtStyles} />
+                <div className='scrll'>
+                    {
+                        allUsers?.data?.map(currUser => {
+                            return currUser?._id?.includes(user?.result?._id) ?
+                                currUser?.frequest?.map(freqs =>
+                                    freqs ?
+                                        <div key={freqs.userId} className='fb-users-list'>
+                                            <div className='fb-avt-div' onClick={() => navigate(`/user/${freqs?.userId}`)} style={{ textDecoration: 'none' }}>
+                                                <Avatar icon={freqs?.userName[0]?.toUpperCase()} avtStyles={avtStyles} />
+                                            </div>
+                                            <p onClick={() => navigate(`/user/${freqs?.userId}`)}>{freqs?.userName}</p>
+                                            <AcceptRequest manageReqBtn={manageReqBtn} freqs={freqs} currUser={currUser} />
                                         </div>
-                                        <p onClick={() => navigate(`/user/${freqs?.userId}`)}>{freqs?.userName}</p>
-                                        <AcceptRequest manageReqBtn={manageReqBtn} freqs={freqs} currUser={currUser} />
-                                    </div>
-                                    : null
-                            )
+                                        : null
+                                )
 
-                            : null
-                    })
-                }
+                                : null
+                        })
+                    }
+                </div>
             </div>
         </>
     )

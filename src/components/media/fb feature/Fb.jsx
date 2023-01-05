@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import refreshImg from '../../../assets/refresh.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { fbReqBtnAct, fetchAllFbUsers } from '../../../Actions and Reducers/Actions/facebookAction'
-import { setFbBtnsAct, updateFbBtnsAct } from '../../../Actions and Reducers/Actions/fbBtnAction'
 import { voteForPost, deletePost } from '../../../Actions and Reducers/Actions/fbpostsAction'
 import { useNavigate, useLocation } from 'react-router-dom'
 import Avatar from '../../avatar/Avatar'
@@ -14,12 +13,11 @@ import FbPostsScroller from './fb posts scroller/FbPostsScroller'
 import PostBtn from './fb post button/PostBtn'
 import copy from 'copy-to-clipboard'
 import LetChat from './lets chat/LetChat'
+import HomeLeft from '../../pages/home/HomeLeft'
 import './fb.css'
 
 const Fb = () => {
 
-    const [fbMenu, setFbMenu] = useState("-25%")
-    const [fbMenuColor, setFbMenuColor] = useState("white")
     const [chatContLeft, setChatContLeft] = useState('-100%')
     const [friendUser, setFriendUser] = useState('')
 
@@ -84,26 +82,18 @@ const Fb = () => {
         dispatch(deletePost(_id, navigate))
     }
 
-
-    useEffect(() => {
-        allUpdatedBtns?.data?.map(slideBtn =>
-            slideBtn?.userId?.includes(user?.result?._id) && (
-                setFbMenu(slideBtn?.navbarSlider) ||
-                setFbMenuColor("whitesmoke")
-            )
-        )
-    })
-
     return (
         <>
-            <div className='fb-cont'>
-                <FbSliderMenu setChatContLeft={setChatContLeft} setFriendUser={setFriendUser} refreshImg={refreshImg} Avatar={Avatar} MakeReqBtn={MakeReqBtn} RemoveRequest={RemoveRequest}
-                    AcceptRequest={AcceptRequest} fetchAllFbUsers={fetchAllFbUsers} setFbBtnsAct={setFbBtnsAct} updateFbBtnsAct={updateFbBtnsAct}
-                    fbMenu={fbMenu} fbMenuColor={fbMenuColor} allUsers={allUsers} user={user} allUpdatedBtns={allUpdatedBtns} navigate={navigate}
-                    dispatch={dispatch} avtStyles={avtStyles} fbReqBtn={fbReqBtn} manageReqBtn={manageReqBtn} />
-                <PostBtn Avatar={Avatar} avtStyles={avtStyles} dispatch={dispatch} navigate={navigate} user={user} />
-                <FbPostsScroller handleDelete={handleDelete} handlePostVote={handlePostVote} location={location} handleShare={handleShare} allFbPosts={allFbPosts} navigate={navigate} avtStyles={avtStyles} Avatar={Avatar} user={user} />
-                <LetChat setChatContLeft={setChatContLeft} navigate={navigate} Avatar={Avatar} avtStyles={avtStyles} friendUser={friendUser} user={user} dispatch={dispatch} chatContLeft={chatContLeft} />
+            <div className='fb-cont-main'>
+                <HomeLeft />
+                <div className='fb-cont'>
+                    <PostBtn Avatar={Avatar} avtStyles={avtStyles} dispatch={dispatch} navigate={navigate} user={user} />
+                    <FbPostsScroller handleDelete={handleDelete} handlePostVote={handlePostVote} location={location} handleShare={handleShare} allFbPosts={allFbPosts} navigate={navigate} avtStyles={avtStyles} Avatar={Avatar} user={user} />
+                    <FbSliderMenu setChatContLeft={setChatContLeft} setFriendUser={setFriendUser} refreshImg={refreshImg} Avatar={Avatar} MakeReqBtn={MakeReqBtn} RemoveRequest={RemoveRequest}
+                        AcceptRequest={AcceptRequest} fetchAllFbUsers={fetchAllFbUsers}
+                        allUsers={allUsers} user={user} allUpdatedBtns={allUpdatedBtns} navigate={navigate}
+                        dispatch={dispatch} avtStyles={avtStyles} fbReqBtn={fbReqBtn} manageReqBtn={manageReqBtn} /><LetChat setChatContLeft={setChatContLeft} navigate={navigate} Avatar={Avatar} avtStyles={avtStyles} friendUser={friendUser} user={user} dispatch={dispatch} chatContLeft={chatContLeft} />
+                </div>
             </div>
         </>
     )

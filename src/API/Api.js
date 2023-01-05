@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: "https://mern-sof-backend.onrender.com"
+    baseURL: "http://localhost:5000"
 })
 
 api.interceptors.request.use((req) => {
@@ -79,21 +79,6 @@ const fetchAllFbUsersData = () => {
     return data;
 }
 
-const setFbBtns = (setBtnData) => {
-    data = api.patch(`/fb/fbBtns`, setBtnData)
-    return data;
-}
-
-const updateFbBtns = (updateBtnData) => {
-    data = api.patch(`/fb/fbUpdateBtns`, updateBtnData)
-    return data;
-}
-
-const fetchUpdatedBtnsData = () => {
-    data = api.get(`/fb/fbUpdateBtns`)
-    return data;
-}
-
 const postFbImgApi = (postsImgData) => {
     data = api.post('/socialmedia/postyourpost', postsImgData)
     return data;
@@ -126,6 +111,6 @@ const deletePost = (_id) => {
 
 export {
     signup, login, askQues, getAllQuestions, postAnswer, deleteQuestion, deleteAnswer, voteForQuestion, fetchAllUsers, updateProfile,
-    getUpdatedProfile, fbReqBtn, fetchAllFbUsersData, setFbBtns, fetchUpdatedBtnsData, updateFbBtns, postFbImgApi, fetchAllFbPosts, voteFbPosts,
+    getUpdatedProfile, fbReqBtn, fetchAllFbUsersData, postFbImgApi, fetchAllFbPosts, voteFbPosts,
     deletePost, saveChatbotMessages, saveUserMessages
 }

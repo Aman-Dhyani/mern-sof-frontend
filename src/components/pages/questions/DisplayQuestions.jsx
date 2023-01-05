@@ -14,7 +14,7 @@ const DisplayQuestions = () => {
             <div className='home-cont'>
                 <HomeLeft />
                 {
-                    location.pathname === '/question' ? <HomeMiddle /> : <QuestionDetails />
+                    location.pathname === '/questions' ? <HomeMiddle /> : <QuestionDetails />
                 }
                 <HomeRight />
             </div>

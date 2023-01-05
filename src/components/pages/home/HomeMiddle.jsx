@@ -45,12 +45,12 @@ const HomeMiddle = () => {
             questionlist === null ? <h1>loading...</h1> :
               <>
                 {
-                  location.pathname === '/question' && (<h3 className='noOfques'> {questionlist.data.length} questions</h3>)
+                  location.pathname === '/questions' && (<h3 className='noOfques'> {questionlist.data.length} questions</h3>)
                 }
 
                 {
                   questionlist.data.map((question, index) => {
-                    return location.pathname === '/question' || question.upVotes.length >= 1 ?
+                    return location.pathname === '/questions' || question.upVotes.length >= 1 ?
                       <div key={index} className='ques-cont'>
 
                         <div className='votes ques-cont-childs'>

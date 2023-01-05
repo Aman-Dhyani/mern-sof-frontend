@@ -23,7 +23,7 @@ const AllRoutes = () => {
       <Route path={'/login'} element={<Login />} />
       <Route path={'/signup'} element={<SignUp />} />
       <Route path={'/askquestion'} element={<AskQuestion />} />
-      <Route path={'/question'} element={<DisplayQuestions />} />
+      <Route path={'/questions'} element={<DisplayQuestions />} />
       <Route path={'/question/:id'} element={<DisplayQuestions />} />
       <Route path={'/user/:id'} element={<UsersProfile />} />
       <Route path={'/users'} element={<Users />} />
@@ -33,7 +33,7 @@ const AllRoutes = () => {
       <Route path={'/fbclone/:id'} element={<FbCurrUserPosts />} />
       <Route path={'/fbpostform'} element={<FbPostForm />} />
       <Route path={'/chatbot'} element={<ChatRobt />} />
-      <Route path={'*'} element={<h1>error404</h1>} />
+      <Route path={'*'} element={<div style={{ height: "80vh", display: "flex", justifyContent: "center", alignItems: "center" }}><h3> The Page You Search Doesn't Exist In Route</h3></div>} />
     </Routes>
   )
 }

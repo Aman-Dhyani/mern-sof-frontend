@@ -1,6 +1,5 @@
 .fb-posts-scroller {
     height: 100vh;
-    width: 400px;
     overflow-y: scroll;
     scrollbar-width: thin;
     background-color: rgb(190, 190, 190);
@@ -10,7 +9,7 @@
 }
 
 .fb-post {
-    width: 80%;
+    width: 70%;
     border: 1px solid rgb(209, 209, 209);
     margin: 10px auto;
     padding: 1%;
@@ -30,6 +29,9 @@
 .fb-post-user-icon {
     background-color: rgb(0, 157, 255);
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .fb-post-disc {
@@ -83,105 +85,95 @@
     border: 1px solid rgb(222, 222, 222);
 }
 
-@media screen and (max-width:1125px) {
+@media screen and (max-width:990px) {
     .fb-posts-scroller {
-        position: relative;
-        left: 3%;
-    }
-}
-
-@media screen and (max-width:1013px) {
-
-    .fb-posts-scroller {
-        width: 350px;
-    }
-
-    .fb-post {
-        width: 95%;
-    }
-
-    .fb-post-div {
-        height: 320px;
-    }
-}
-
-@media screen and (max-width:704px) {
-    .fb-posts-scroller {
-        width: 300px;
-    }
-
-    .fb-post {
-        width: 95%;
-    }
-
-    .fb-post-div {
-        height: 300px;
-    }
-
-    .fb-post {
-        font-size: 11px;
-    }
-
-    .fb-post-share,
-    .fb-post-delete {
-        font-size: 11px;
-    }
-}
-
-@media screen and (max-width:521px) {
-    .fb-posts-scroller {
-        left: -3%;
-    }
-}
-
-@media screen and (max-width:491px) {
-    .fb-posts-scroller {
-        width: 270px;
-    }
-
-    .fb-post {
-        width: 93%;
-    }
-
-    .fb-post-div {
-        height: 260px;
-    }
-    .fb-vote-btns {
-        height: 15px;
-        width: 15px;
-    }
-    .fb-post-share,
-    .fb-post-delete {
-        font-size: 9px;
-    }
-}
-
-@media screen and (max-width:430px) {
-    .fb-posts-scroller {
-        width: 250px;
+        width: 60%;
     }
 
     .fb-post {
         width: 90%;
     }
+}
 
-    .fb-post-div {
-        height: 220px;
+@media screen and (max-width:627px) {
+    .fb-post-user-icon {
+        height: 25px;
+        width: 25px;
+        font-size: 10px;
+    }
+
+    .fb-post-disc {
+        font-size: 12px;
+    }
+
+    .fb-vote-btns {
+        height: 15px;
+        width: 15px;
+    }
+
+    .fb-post-share,
+    .fb-post-delete {
+        font-size: 12px;
+    }
+
+    .fbuser-posted-on {
+        font-size: 12px;
     }
 }
 
-@media screen and (max-width:398px) {
+
+@media screen and (max-width:571px) {
     .fb-posts-scroller {
-        width: 230px;
+        width: 55%;
     }
 }
 
-@media screen and (max-width:371px) {
+@media screen and (max-width:544px) {
+    .fb-post-div {
+        height: 30vh;
+    }
+}
+
+@media screen and (max-width:375px) {
+
     .fb-posts-scroller {
-        width: 200px;
+        width: 50%;
     }
 
     .fb-post-div {
-        height: 180px;
+        height: 20vh;
+    }
+
+    .fb-post-user-icon {
+        height: 20px;
+        width: 20px;
+        font-size: 8px;
+    }
+
+    .fb-post-head {
+        font-size: 9px;
+    }
+
+    .fb-post-disc {
+        font-size: 10px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .fb-vote-btns {
+        height: 10px;
+        width: 10px;
+    }
+
+    .fb-vote-box p {
+        font-size: 8px;
+    }
+
+    .fb-post-share,
+    .fb-post-delete {
+        font-size: 10px;
+    }
+
+    .fbuser-posted-on {
+        font-size: 10px;
     }
 }

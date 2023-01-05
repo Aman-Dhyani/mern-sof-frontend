@@ -4,7 +4,7 @@ const askQuesAction = (questionData, navigate) => async (dispatch) => {
     try {
         const data = await api.askQues(questionData)
         dispatch({ type: 'ASK_QUES', payload: data })
-        navigate('/question')
+        navigate('/questions')
         dispatch(fetchAllQues())
     } catch (error) {
         console.log(error);
@@ -14,7 +14,7 @@ const askQuesAction = (questionData, navigate) => async (dispatch) => {
 const deleteQuesAction = (id, navigate) => async (dispatch) => {
     try {
         await api.deleteQuestion(id)
-        navigate('/question')
+        navigate('/questions')
         dispatch(fetchAllQues()) // --- for real time interface
     } catch (error) {
         console.log(error);

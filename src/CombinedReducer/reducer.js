@@ -5,9 +5,8 @@ import askQuesReducer from "../Actions and Reducers/Reducers/quesReducer";
 import postAnsReducer from '../Actions and Reducers/Reducers/postAnsReducer'
 import { fetchAllUsers } from '../Actions and Reducers/Reducers/fetchUsersReducer'
 import facebookReducer from '../Actions and Reducers/Reducers/facebookReducer'
-import fbBtnReducer from '../Actions and Reducers/Reducers/fbBtnReducer'
 import fbpostsReducer from '../Actions and Reducers/Reducers/fbPostsReducer'
 
 export default combineReducers({
-    authReducer, currentUserReducer, askQuesReducer, postAnsReducer, fetchAllUsers, facebookReducer, fbBtnReducer, fbpostsReducer
+    authReducer, currentUserReducer, askQuesReducer, postAnsReducer, fetchAllUsers, facebookReducer, fbpostsReducer
 })

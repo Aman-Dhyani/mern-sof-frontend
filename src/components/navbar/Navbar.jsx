@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Avatar from '../avatar/Avatar'
 import logo from '../../assets/stack logo.png'
 import search from '../../assets/search-icon.svg'
@@ -12,6 +12,8 @@ import { logOut } from '../../Actions and Reducers/Actions/authAction'
 import decode from 'jwt-decode'
 
 const Navbar = () => {
+
+    const [routeName, setRoute] = useState("")
 
     const avtStyles = {
         backgroundColor: "rgb(255, 0, 0)",
@@ -40,6 +42,9 @@ const Navbar = () => {
         // eslint-disable-next-line
     }, [dispatch])
 
+    function handleRoute() {
+        routeName.toLowerCase() === "home" ? navigate(`/`) : navigate(`/${routeName}`)
+    }
 
     return (
         <>
@@ -54,8 +59,8 @@ const Navbar = () => {
                 <NavLink className='navbar-childs nav-extra-childs' to={'#'}><p>ForTeam</p></NavLink>
 
                 <form className='nav-form nav-flex-childs'>
-                    <input className='nav-search' type={'text'} placeholder='Search...' />
-                    <img className='nav-search-icon' src={search} alt="err" />
+                    <input className='nav-search' type={'text'} value={routeName} onChange={(e) => setRoute(e.target.value)} placeholder='Search page...' />
+                    <img className='nav-search-icon' onClick={handleRoute} src={search} alt="err" />
                 </form>
                 {
                     user === null ? <NavLink className='navbar-childs nav-login' to='/login'><h4>Login</h4></NavLink> :
