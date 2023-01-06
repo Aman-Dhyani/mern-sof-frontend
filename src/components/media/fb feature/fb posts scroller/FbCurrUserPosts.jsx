@@ -28,7 +28,7 @@ const FbCurrUserPosts = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const location = useLocation()
-    const url = `http://localhost:3000`
+    const url = `https://mern-sof-clone.netlify.app`
     const allFbPosts = useSelector((state) => (state.fbpostsReducer?.data))
     const user = useSelector((state) => (state.currentUserReducer))
 
