@@ -30,7 +30,7 @@ const Fb = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const location = useLocation()
-    const url = `http://localhost:3000`
+    const url = `https://mern-sof-backend.onrender.com`
 
     const avtStyles = {
         color: "white",

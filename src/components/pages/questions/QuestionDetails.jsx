@@ -28,7 +28,7 @@ const QuestionDetails = () => {
 
     const [Answer, setAnswer] = useState("")
     const location = useLocation()
-    const url = `http://localhost:3000`
+    const url = `https://mern-sof-backend.onrender.com`
 
     const handleSubmit = (e) => {
         e.preventDefault()
