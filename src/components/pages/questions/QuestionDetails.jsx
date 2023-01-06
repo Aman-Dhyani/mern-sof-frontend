@@ -28,7 +28,7 @@ const QuestionDetails = () => {
 
     const [Answer, setAnswer] = useState("")
     const location = useLocation()
-    const url = `https://mern-sof-backend.onrender.com`
+    const url = `https://mern-sof-clone.netlify.app`
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -53,6 +53,8 @@ const QuestionDetails = () => {
             alert("url copied to share")
         }, 100);
     }
+
+    console.log(location.pathname);
 
     const handleDelete = () => {
         dispatch(deleteQuesAction(id, navigate))

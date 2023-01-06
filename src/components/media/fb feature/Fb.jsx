@@ -30,7 +30,7 @@ const Fb = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const location = useLocation()
-    const url = `https://mern-sof-backend.onrender.com`
+    const url = `https://mern-sof-clone.netlify.app`
 
     const avtStyles = {
         color: "white",
